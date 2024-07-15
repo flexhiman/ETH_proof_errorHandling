@@ -14,21 +14,27 @@ This program is a simple contract written in Solidity, a programming language us
 
 contract ErrorHandling{
     function MultiRequire(uint n,uint m) public pure{
-        require( n*m<50, "The multipication of n and m is smaller than 50");
+        require( n*m<50, "The multiplication of n and m is greater than 50");
     }
     function MultiAssert (uint i) public pure{
         assert( i>=5 );
     }
-    function MultiRevert (uint q,uint u) public pure{
-        if( q*u>50){
-            revert("The multipication of q and u is smaller than 50");
+    function MultiRevert (uint q, uint u) public pure{
+        if( q*u>=50){
+            revert("The multiplication of q and u is greater than or equals to 50");
         }
+    else{
+            revert("The multiplication of q and u is smaller than 50");
+      }
     }
 }
+
+
+
 ```
 In this program, we implement the error-handling methods. We first make a contract named ErrorHandling and after that, a function named MultiRequire and after that take two unsigned integers n&m and pass the arguments.
-After that, we make a function named MUltiAssert and take an unsigned integer i. And after that we pass the arguments.
-After that, we make a function named MultiRevert and take two unsigned integer q&u and after that pass the arguments.
+After that, we make a function named MUltiAssert and take an unsigned integer i. And after that, we pass the arguments.
+After that, we make a function named MultiRevert and take two unsigned integers q&u and after that pass the arguments.
 
 ## Authors
 Himanshu Singh
